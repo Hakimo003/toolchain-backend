@@ -55,7 +55,5 @@ form:
   pipeline:
     parameters:
       prod-app-name: '{{services.sample-repo.parameters.repo_name}}'
-      prod-region: 'Francfort'
-      prod-organization: 'afr-prod-rg'
     schema:
       $ref: deploy.json
