@@ -55,6 +55,6 @@ form:
   pipeline:
     parameters:
       prod-app-name: '{{services.sample-repo.parameters.repo_name}}'
-      prod-region: '1'
+      prod-region: 'DALLAS'
     schema:
       $ref: deploy.json
