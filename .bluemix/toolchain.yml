@@ -17,14 +17,12 @@ toolchain:
     getting_started:
       $ref: "#/messages/template.gettingStarted"
 
-git:
-  name: 'backend-repo'
 
 services:
   sample-repo:
     service_id: hostedgit
     parameters:
-      repo_name: 'backend-repo'
+      repo_name: '{{ toolchain.name }}'
       repo_url: 'https://github.com/Hakimo003/backend-repo'
       type: clone
       has_issues: true
