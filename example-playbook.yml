@@ -1,0 +1,12 @@
+# Publish this application to Bluemix using Ansible
+---
+- name: Publish the app to Bluemix
+  hosts: localhost
+  connection: local
+  vars:
+    app_hostname: "{{ lookup('env','APP_HOSTNAME') }}"
+  tasks:
+    - debug:
+        var: app_hostname
+    - name: CF Push Application
+      shell: "cf push {{ app_hostname }}"
