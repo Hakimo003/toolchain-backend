@@ -7,9 +7,22 @@ stages:
     service: ${SAMPLE_REPO}
   triggers:
   - type: commit
+  permission:
+    execute: TOOLCHAIN_ADMINS
   jobs:
   - name: Build
     type: builder
+    artifact_dir: ''
+    build_type: maven
+    script: |-
+      #!/bin/bash
+      export JAVA_HOME=$JAVA8_HOME
+
+      mvn -B -DskipTests install
+
+      cp pom.xml target
+
+      ls -lR
 - name: DEPLOY
   inputs:
   - type: job
@@ -36,12 +49,12 @@ stages:
     script: |
       #!/bin/bash
       # Push app
-      if ! cf app $CF_APP; then  
+      if ! cf app $CF_APP; then
         cf push $CF_APP
       else
         OLD_CF_APP=${CF_APP}-OLD-$(date +"%s")
         rollback() {
-          set +e  
+          set +e
           if cf app $OLD_CF_APP; then
             cf logs $CF_APP --recent
             cf delete $CF_APP -f
@@ -60,4 +73,3 @@ stages:
       export APP_URL=http://$(cf app $CF_APP_NAME | grep -e urls: -e routes: | awk '{print $2}')
       # View logs
       #cf logs "${CF_APP}" --recent
-      
