@@ -57,10 +57,10 @@ services:
 
 form:
   pipeline:
-  parameters:
-    dev-app-name: '{{services.sample-repo.parameters.repo_name}}'
-    dev-space: 'afr-dev-reg'
-    dev-organization: 'afr-cfo'
-    dev-region: 'Frankfurt'
-  schema:
-    $ref: deploy.json
+    parameters:
+      dev-app-name: '{{services.sample-repo.parameters.repo_name}}'
+      dev-space: 'afr-dev-reg'
+      dev-organization: 'afr-cfo'
+      dev-region: 'Frankfurt'
+    schema:
+      $ref: deploy.json
