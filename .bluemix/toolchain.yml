@@ -21,12 +21,13 @@ toolchain:
   template:
     getting_started:
       $ref: "#/messages/template.gettingStarted"
+
 services:
   sample-repo:
     service_id: gitlab
     parameters:
       repo_name: '{{toolchain.name}}'
-      repo_url: 'https://github.com/open-toolchain/node-hello-world'
+      repo_url: 'https://github.com/Hakimo003/backend-java'
       type: clone
       has_issues: true
       enable_traceability: true
