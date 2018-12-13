@@ -6,10 +6,15 @@ template:
     $ref: "#/messages/template.name"
   description:
     $ref: "#/messages/template.description"
+  header: '![](toolchain.svg?localize)'
+  icon: icon.svg
   info:
     git url: >-
       [https://github.com/Hakimo003/toolchain-backend](https://github.com/Hakimo003/toolchain-backend)
     git branch: '[master](https://github.com/Hakimo003/toolchain-backend/tree/master)'
+
+
+
 
 toolchain:
   name: 'backend-toolchain-{{timestamp}}'
