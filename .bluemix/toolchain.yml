@@ -17,13 +17,13 @@ template:
     git branch: >-
       [master](https://github.com/Hakimo003/toolchain-backend/tree/master)
 toolchain:
-  name: 'simple-toolchain-{{timestamp}}'
+  name: 'cantine-toolchain-{{timestamp}}'
   template:
     getting_started:
       $ref: "#/messages/template.gettingStarted"
 services:
   sample-repo:
-    service_id: githubpublic
+    service_id: gitlabpublic
     parameters:
       repo_name: '{{toolchain.name}}'
       repo_url: 'https://github.com/open-toolchain/node-hello-world'
