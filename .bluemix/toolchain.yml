@@ -42,6 +42,7 @@ services:
         content:
           $text: pipeline.yml
         env:
+          BRANCH_NAME: develop
           URL_REPO: https://gitlab.com/hakim_003/digiservpt.git
           SAMPLE_REPO: sample-repo
           CF_APP_NAME: '{{form.pipeline.parameters.prod-app-name}}'
