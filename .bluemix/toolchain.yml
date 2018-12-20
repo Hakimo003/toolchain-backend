@@ -27,8 +27,8 @@ services:
     service_id: gitlab
     parameters:
       repo_name: '{{toolchain.name}}'
-      repo_url: 'https://github.com/Hakimo003/backend-java'
-      type: clone
+      repo_url: 'https://gitlab.com/hakim_003/digiservpt.git'
+      type: Existant
       has_issues: true
       enable_traceability: true
   sample-build:
